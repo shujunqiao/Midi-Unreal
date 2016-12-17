@@ -30,7 +30,7 @@ enum class EMidiTypeEnum : uint8
 	*/
 	MTE_NOTE_OFF = 8				UMETA(DisplayName = "Note Off"),
 	/*
-	*	Note On/Off Event
+	*	Note On Event
 	*	[Data1=Note, Data2=Velocity]
 	*/
 	MTE_NOTE_ON = 9				UMETA(DisplayName = "Note On"),
