@@ -25,10 +25,15 @@ UENUM(BlueprintType)
 enum class EMidiTypeEnum : uint8
 {
 	/*
+	*	Note Off Event
+	*	[Data1=Note, Data2=Velocity]
+	*/
+	MTE_NOTE_OFF = 8				UMETA(DisplayName = "Note Off"),
+	/*
 	*	Note On/Off Event
 	*	[Data1=Note, Data2=Velocity]
 	*/
-	MTE_NOTE = 9				UMETA(DisplayName = "Note"),
+	MTE_NOTE_ON = 9				UMETA(DisplayName = "Note On"),
 	/*
 	*	Note Aftertouch Event
 	*	[Data1=Note, Data2=Amount]
@@ -80,7 +85,7 @@ struct FMidiEvent
 	//Constructor
 	FMidiEvent()
 	{
-		Type = EMidiTypeEnum::MTE_NOTE;
+		Type = EMidiTypeEnum::MTE_NOTE_OFF;
 		Channel = 0;
 		Data1 = 0;
 		Data2 = 0;
